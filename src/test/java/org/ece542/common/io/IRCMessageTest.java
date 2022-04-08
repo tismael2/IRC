@@ -13,17 +13,8 @@ class IRCMessageTest {
 
     @BeforeEach
     void setUp() {
-        byte[] flag = {0};
-        byte[] temp = "test".getBytes(StandardCharsets.UTF_8);
-        byte[] c = new byte[1 + temp.length];
-        System.arraycopy(flag, 0, c, 0, 1);
-        System.arraycopy(temp, 0, c, 1, temp.length);
-        IRCMessage testmes = new IRCMessage(c);
-        try {
-            System.out.println(testmes.getPost());
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+
+
 
     }
 
@@ -32,8 +23,15 @@ class IRCMessageTest {
     }
 
     @Test
-    void getPost() {
+    void getPost() throws UnsupportedEncodingException {
 
-        System.out.println();
+        byte[] flag = {0};
+        byte[] temp = "test".getBytes(StandardCharsets.UTF_8);
+        byte[] c = new byte[1 + temp.length];
+        System.arraycopy(flag, 0, c, 0, 1);
+        System.arraycopy(temp, 0, c, 1, temp.length);
+        IRCMessage testmes = new IRCMessage(c);
+
+        assertEquals("test",testmes.getPost());
     }
 }
