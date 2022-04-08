@@ -30,7 +30,7 @@ public class IRCServerSocket {
         serverSocket.close();
     }
 
-    /* private helper class for maintaining a thread for each
+    /* private helper class for maintaining a thread for each client
      *
      */
     private static class IRCClientHandler extends Thread {

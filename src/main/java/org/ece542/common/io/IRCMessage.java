@@ -14,6 +14,8 @@ public class IRCMessage {
     public final byte[] buf;
     private MessageType type;
     private int messageLength;
+    private String userOrigin;
+    private String msgContent;
 
 
     public IRCMessage(byte[] buf){
@@ -25,7 +27,7 @@ public class IRCMessage {
                 type = MessageType.POST;
                 break;
             case 1:
-                type = MessageType.CLOSE;
+                type = MessageType.CLOSECONNECTION;
         }
     }
 
@@ -37,7 +39,7 @@ public class IRCMessage {
     }
 
     private static enum MessageType{
-        POST, CLOSE;
+        POST, CLOSECONNECTION, CONNECTIONACK;
     }
 
 }
