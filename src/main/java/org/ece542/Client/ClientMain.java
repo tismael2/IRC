@@ -1,6 +1,9 @@
 package org.ece542.Client;
 
 public class ClientMain {
+
+    private String userName;
+
     /**
      * main entry point for IRC Client.
      * @param args
@@ -11,7 +14,9 @@ public class ClientMain {
         int portnum = 5555;
 
         IRCClientSocket ircClientSocket = new IRCClientSocket();
+        IRCClientUI ircClientUI = new IRCClientUI();
 
+        ircClientUI.start();
 
         ircClientSocket.start(portnum, hostname);
 
