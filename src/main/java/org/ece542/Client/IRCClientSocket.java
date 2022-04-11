@@ -1,7 +1,5 @@
 package org.ece542.Client;
 
-import org.ece542.common.io.IRCMessage;
-
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.IOException;
@@ -39,19 +37,19 @@ public class IRCClientSocket {
     }
 
     /**
-     * Effects: sends a message to the server.  message could be a command or chat in a room.
+     * Effects: sends a message to the server.
      *
      * @param message
      */
-    public void sendMessage(IRCMessage message){
+    public void sendMessage(String message){
 
     }
 
     /**
-     * Effects: receives message from the server and takes appropriate action based on message type.
-     * @param message
+     * Effects: receives message from the server and prints it out the terminal.
+     * @param message String containing message from the server.
      */
-    public void readMessage(IRCMessage message){
+    public void readMessage(String message){
 
     }
 }
